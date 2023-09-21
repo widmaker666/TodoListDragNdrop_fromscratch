@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "rubik";
+  src: url(./assets/fonts/Rubik-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "fuggles";
+  src: url(./assets/fonts/Fuggles-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: mediumseagreen;
+  height: 100vh;
+}
+body .title-section {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .title-section .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: rgb(255, 243, 239);
+  border: 1.5px solid black;
+  width: 200px;
+  height: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body .title-section .title-container h1 {
+  font-family: "fuggles";
+  font-size: 2rem;
+}
+body .title-section .title-container h3 {
+  font-family: "rubik";
+}
+body .input-task-section {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .input-task-section .task-container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: rgb(255, 243, 239);
+  border: 1.5px solid black;
+}
+body .input-task-section .task-container h2 {
+  font-family: "rubik";
+  font-weight: 100;
+}
+body .input-task-section .task-container .form-task {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body .input-task-section .task-container .form-task #taskInput {
+  height: 40px;
+  width: 250px;
+  padding-left: 10px;
+  font-family: "rubik";
+}
+body .input-task-section .task-container .form-task button {
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  margin: 5px auto 5px auto;
+  background: transparent;
+  font-family: "rubik";
+}
+body .input-task-section .task-container .form-task button:hover {
+  background: mediumseagreen;
+  color: whitesmoke;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,112 @@
+//* FONT FACES //
+@font-face {
+  font-family: "rubik";
+  src: url(./assets/fonts/Rubik-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "fuggles";
+  src: url(./assets/fonts/Fuggles-Regular.ttf);
+}
+
+$title-manuscrit: "fuggles";
+$font-reg: "rubik";
+
+//* ROOT //
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: mediumseagreen;
+  height: 100vh;
+
+  & .title-section {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background: rgb(255, 243, 239);
+      border: 1.5px solid black;
+      width: 200px;
+      height: 80px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      & h1 {
+        font-family: $title-manuscrit;
+        font-size: 2rem;
+      }
+      & h3 {
+        font-family: $font-reg;
+      }
+    }
+  }
+
+  & .input-task-section {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .task-container {
+      width: 100%;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      background: rgb(255, 243, 239);
+      border: 1.5px solid black;
+
+      & h2 {
+        font-family: $font-reg;
+        font-weight: 100;
+      }
+
+      & .form-task {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        & #taskInput {
+          height: 40px;
+          width: 250px;
+          padding-left: 10px;
+          font-family: $font-reg;
+        }
+
+        & button {
+          width: 80px;
+          height: 30px;
+          border-radius: 10px;
+          margin: 5px auto 5px auto;
+          background: transparent;
+          font-family: $font-reg;
+
+          &:hover {
+            background: mediumseagreen;
+            color: whitesmoke;
+          }
+        }
+      }
+    }
+  }
+}
