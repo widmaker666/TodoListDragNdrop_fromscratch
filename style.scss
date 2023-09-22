@@ -18,6 +18,7 @@ $font-reg: "rubik";
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  list-style: none;
 }
 
 html {
@@ -105,6 +106,49 @@ body {
             background: mediumseagreen;
             color: whitesmoke;
           }
+        }
+      }
+    }
+  }
+  & .tasks {
+    height: auto;
+    width: 90%;
+    margin: 10px auto;
+    padding: 5px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background: rgb(255, 243, 239);
+    border: 1.5px solid black;
+
+    & h1 {
+      font-family: $title-manuscrit;
+      font-size: 3rem;
+      text-decoration: 2px underline;
+      text-underline-offset: 5px;
+    }
+
+    & .task-array-container {
+      height: auto;
+      width: 80%;
+      margin: 0px auto;
+      padding: 10px;
+
+      & .tasks-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 10px auto;
+        height: 50px;
+        border: 2px solid black;
+        width: auto;
+        border-radius: 20px;
+
+        & h2 {
+          font-family: $font-reg;
+          font-weight: 400;
+          font-size: 1rem;
+          font-style: italic;
         }
       }
     }

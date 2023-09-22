@@ -11,6 +11,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  list-style: none;
 }
 
 html {
@@ -91,4 +92,44 @@ body .input-task-section .task-container .form-task button {
 body .input-task-section .task-container .form-task button:hover {
   background: mediumseagreen;
   color: whitesmoke;
+}
+body .tasks {
+  height: auto;
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background: rgb(255, 243, 239);
+  border: 1.5px solid black;
+}
+body .tasks h1 {
+  font-family: "fuggles";
+  font-size: 3rem;
+  -webkit-text-decoration: 2px underline;
+          text-decoration: 2px underline;
+  text-underline-offset: 5px;
+}
+body .tasks .task-array-container {
+  height: auto;
+  width: 80%;
+  margin: 0px auto;
+  padding: 10px;
+}
+body .tasks .task-array-container .tasks-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px auto;
+  height: 50px;
+  border: 2px solid black;
+  width: auto;
+  border-radius: 20px;
+}
+body .tasks .task-array-container .tasks-div h2 {
+  font-family: "rubik";
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: italic;
 }/*# sourceMappingURL=style.css.map */
