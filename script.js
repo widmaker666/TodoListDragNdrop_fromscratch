@@ -1,26 +1,53 @@
 //! Local Storage //
-const formTasks = document.querySelector(".form-task");
-const localTasks = JSON.parse(localStorage.getItem("tasks"))
 
+//! Constants //
+
+//! Constants DOM //
+const formTasks = document.querySelector(".form-task");
+const tasksList = document.querySelector(".task-array-container");
+
+//! Function
 formTasks.addEventListener("submit", handleSubmit);
 
 function handleSubmit(e) {
-  e.preventDefault();  
+  e.preventDefault();
 
-  const todo = {
+  const inputTasks = {
+    title: taskInput.value,
     id: Date.now(),
-    task: taskInput.value,
-    completed: false,
   };
- 
-  localStorage.setItem("tasks", JSON.stringify(todo));
-  document.location.reload()  
+  addTask(inputTasks);
+
+  document.location.reload();
 }
 
-h2.textContent = `${localTasks.task}`
+function addTask(task) {
+  let arrayTask = [];
 
-//- Il faut que je puisse maintenant rentrer mes infos du local storage ds un tableau puis ensuite les faire sortir comme une div + h2 comme ds le html ! 
+  if (localStorage.getItem("tasks")) {
+    arrayTask = JSON.parse(localStorage.getItem("tasks"));
+  }
+  arrayTask.push(task);
+  localStorage.setItem("tasks", JSON.stringify(arrayTask));
+}
 
+function displayTask() {
+  let displayArray = [];
+
+  if (localStorage.getItem("tasks")) {
+    displayArray = JSON.parse(localStorage.getItem("tasks"));
+  }
+
+  displayArray.map((tasks) => {
+    const t = tasks.title;    
+
+    tasksList.innerHTML += `<div draggable="true" class="tasks-div">
+    <h2 id="h2">${t}</h2>
+    </div>`;
+  });
+}
+
+displayTask();
 
 
 

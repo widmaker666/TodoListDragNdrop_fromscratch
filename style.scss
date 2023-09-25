@@ -153,4 +153,63 @@ body {
       }
     }
   }
+  & .todo {
+    height: auto;
+    width: 90%;
+    margin: 20px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    & .todo-task {
+      text-align: center;
+      background: rgb(255, 243, 239);
+      border: 1.5px solid black;
+      min-height: 100px;
+      height: auto;
+      width: 40%;
+
+      & h1 {
+        font-family: $title-manuscrit;
+        font-size: 2rem;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+        text-decoration: 1px underline;
+        text-underline-offset: 4px;
+      }
+
+      & .t-tasks {
+        & h3 {
+          font-family: $font-reg;
+          font-weight: 100;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    & .finish-task {
+      text-align: center;
+      background: rgb(255, 243, 239);
+      border: 1.5px solid black;
+      min-height: 100px;
+      height: auto;
+      width: 40%;
+
+      & h1 {
+        font-family: $title-manuscrit;
+        font-size: 2rem;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+        text-decoration: 1px underline;
+        text-underline-offset: 4px;
+      }
+
+      & .f-tasks {
+        & h3 {
+          font-family: $font-reg;
+          font-weight: 100;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
 }

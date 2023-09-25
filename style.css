@@ -132,4 +132,56 @@ body .tasks .task-array-container .tasks-div h2 {
   font-weight: 400;
   font-size: 1rem;
   font-style: italic;
+}
+body .todo {
+  height: auto;
+  width: 90%;
+  margin: 20px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body .todo .todo-task {
+  text-align: center;
+  background: rgb(255, 243, 239);
+  border: 1.5px solid black;
+  min-height: 100px;
+  height: auto;
+  width: 40%;
+}
+body .todo .todo-task h1 {
+  font-family: "fuggles";
+  font-size: 2rem;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+  -webkit-text-decoration: 1px underline;
+          text-decoration: 1px underline;
+  text-underline-offset: 4px;
+}
+body .todo .todo-task .t-tasks h3 {
+  font-family: "rubik";
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+body .todo .finish-task {
+  text-align: center;
+  background: rgb(255, 243, 239);
+  border: 1.5px solid black;
+  min-height: 100px;
+  height: auto;
+  width: 40%;
+}
+body .todo .finish-task h1 {
+  font-family: "fuggles";
+  font-size: 2rem;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+  -webkit-text-decoration: 1px underline;
+          text-decoration: 1px underline;
+  text-underline-offset: 4px;
+}
+body .todo .finish-task .f-tasks h3 {
+  font-family: "rubik";
+  font-weight: 100;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */
