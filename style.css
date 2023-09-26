@@ -127,11 +127,22 @@ body .tasks .task-array-container .tasks-div {
   width: auto;
   border-radius: 20px;
 }
+body .tasks .task-array-container .tasks-div:hover {
+  background: black;
+  color: white;
+}
 body .tasks .task-array-container .tasks-div h2 {
   font-family: "rubik";
   font-weight: 400;
   font-size: 1rem;
   font-style: italic;
+}
+body .tasks .task-array-container .tasks-div h2:hover {
+  cursor: pointer;
+}
+body .tasks .task-array-container .tasks-div .dragging {
+  opacity: 0.5;
+  color: lightcoral;
 }
 body .todo {
   height: auto;

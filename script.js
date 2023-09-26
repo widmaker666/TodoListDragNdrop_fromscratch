@@ -1,4 +1,4 @@
-//! Local Storage //
+//* Local Storage //
 
 //! Constants //
 
@@ -39,15 +39,42 @@ function displayTask() {
   }
 
   displayArray.map((tasks) => {
-    const t = tasks.title;    
+    const t = tasks.title;
 
-    tasksList.innerHTML += `<div draggable="true" class="tasks-div">
-    <h2 id="h2">${t}</h2>
+    tasksList.innerHTML += `<div  class="tasks-div">
+    <h2 draggable="true" id="h2">${t}</h2>
     </div>`;
   });
 }
 
 displayTask();
 
+//* Drag and drop //
 
+const draggables = document.querySelectorAll("#h2")
+const divTask = document.querySelector(".tasks")
+const containerTodo = document.querySelector(".todo-task")
+const containerFinish = document.querySelector(".f-tasks")
+
+draggables.forEach((draggable) => {
+  draggable.addEventListener("dragstart", dragStart)
+
+  function dragStart(){
+    draggable.classList.add("dragging")
+    console.log('fuck')
+  }
+
+  draggable.addEventListener("dragend", dragEnd)
+  function dragEnd(){
+    draggable.classList.remove('dragging')
+    console.log('damnit')
+  }
+})
+
+divTask.addEventListener('dragover', dragOver)
+function dragOver(e){
+  e.preventDefault()
+  const draggable = document.querySelector('.dragging')
+  
+}
 

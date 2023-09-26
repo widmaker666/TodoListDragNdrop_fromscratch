@@ -144,11 +144,25 @@ body {
         width: auto;
         border-radius: 20px;
 
+        &:hover {
+          background: black;
+          color: white;
+        }
+
         & h2 {
           font-family: $font-reg;
           font-weight: 400;
           font-size: 1rem;
-          font-style: italic;
+          font-style: italic;        
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        & .dragging {
+          opacity: 0.5;
+          color: lightcoral;
         }
       }
     }
