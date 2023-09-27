@@ -248,17 +248,20 @@ draggablesFinish.forEach((draggable) => {
 
 //* Touchstart pour Telephone //
 
-draggables.forEach((draggable) => {
-  let selected; // Variable pour stocker l'élément sélectionné
+let selected = null; // Variable pour stocker l'élément sélectionné
+let touchStartX, touchStartY;
 
+draggables.forEach((draggable) => {
   // Écoutez le touchstart pour commencer le glissement
   draggable.addEventListener("touchstart", touchStart);
 
   // Fonction pour gérer le touchstart
   function touchStart(e) {
     e.preventDefault();
-    draggable.classList.add("dragging-color");
+    draggable.classList.add("dragging");
     selected = e.target;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
   }
 
   // Écoutez le touchmove pour le déplacement
@@ -266,14 +269,21 @@ draggables.forEach((draggable) => {
 
   // Fonction pour gérer le touchmove
   function touchMove(e) {
-    e.preventDefault();    
+    e.preventDefault();
+
+    if (!selected) return;
+
     // Obtenez les coordonnées du touchmove
     const touchX = e.touches[0].clientX;
     const touchY = e.touches[0].clientY;
-
+    
     // Mettez à jour la position de l'élément sélectionné
-    selected.style.transform = `translate(${touchX}px, ${touchY}px)`;
-    selected.style.backgroundColor = "lightblue";
+    const deltaX = touchX - touchStartX;
+    const deltaY = touchY - touchStartY;
+    selected.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+    
+    // Ajoutez un style pour rendre l'élément sélectionné visible pendant le déplacement
+    selected.style.backgroundColor = "lightblue"; // Changez la couleur de fond selon vos préférences
   }
 
   // Écoutez le touchend pour la fin du glissement
@@ -282,7 +292,15 @@ draggables.forEach((draggable) => {
   // Fonction pour gérer le touchend
   function touchEnd(e) {
     e.preventDefault();
-    draggable.classList.remove("dragging-color");
+
+    if (!selected) return;
+    // Réinitialisez le style de l'élément sélectionné
+    selected.style.backgroundColor = ""; // Rétablissez la couleur de fond par défaut
+    selected.style.transform = "translate(0px, 0px)";
+    
+    draggable.classList.remove("dragging");
+    selected = null;
+    // Effectuez ici les actions nécessaires lorsque le glissement se termine
     todoTask.appendChild(selected);
     H2Task();
     todoH2Task();
@@ -290,4 +308,5 @@ draggables.forEach((draggable) => {
     document.location.reload();
   }
 });
+
 
