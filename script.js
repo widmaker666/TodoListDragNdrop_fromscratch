@@ -244,3 +244,50 @@ draggablesFinish.forEach((draggable) => {
     }
   }
 });
+
+
+//* Touchstart pour Telephone //
+
+draggables.forEach((draggable) => {
+  let selected; // Variable pour stocker l'élément sélectionné
+
+  // Écoutez le touchstart pour commencer le glissement
+  draggable.addEventListener("touchstart", touchStart);
+
+  // Fonction pour gérer le touchstart
+  function touchStart(e) {
+    e.preventDefault();
+    draggable.classList.add("dragging");
+    selected = e.target;
+  }
+
+  // Écoutez le touchmove pour le déplacement
+  draggable.addEventListener("touchmove", touchMove);
+
+  // Fonction pour gérer le touchmove
+  function touchMove(e) {
+    e.preventDefault();
+    
+    // Obtenez les coordonnées du touchmove
+    const touchX = e.touches[0].clientX;
+    const touchY = e.touches[0].clientY;
+
+    // Mettez à jour la position de l'élément sélectionné
+    selected.style.transform = `translate(${touchX}px, ${touchY}px)`;
+  }
+
+  // Écoutez le touchend pour la fin du glissement
+  draggable.addEventListener("touchend", touchEnd);
+
+  // Fonction pour gérer le touchend
+  function touchEnd(e) {
+    e.preventDefault();
+    draggable.classList.remove("dragging");
+    todoTask.appendChild(selected);
+    H2Task();
+    todoH2Task();
+    H2FinishTask();
+    document.location.reload();
+  }
+});
+
