@@ -245,8 +245,8 @@ draggablesFinish.forEach((draggable) => {
   }
 });
 
-
 //* Touchstart pour Telephone //
+
 
 let selected = null; // Variable pour stocker l'élément sélectionné
 let touchStartX, touchStartY;
@@ -271,17 +271,15 @@ draggables.forEach((draggable) => {
   function touchMove(e) {
     e.preventDefault();
 
-    if (!selected) return;
-
     // Obtenez les coordonnées du touchmove
     const touchX = e.touches[0].clientX;
     const touchY = e.touches[0].clientY;
-    
+
     // Mettez à jour la position de l'élément sélectionné
     const deltaX = touchX - touchStartX;
     const deltaY = touchY - touchStartY;
     selected.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-    
+
     // Ajoutez un style pour rendre l'élément sélectionné visible pendant le déplacement
     selected.style.backgroundColor = "lightblue"; // Changez la couleur de fond selon vos préférences
   }
@@ -293,14 +291,11 @@ draggables.forEach((draggable) => {
   function touchEnd(e) {
     e.preventDefault();
 
-    if (!selected) return;
     // Réinitialisez le style de l'élément sélectionné
     selected.style.backgroundColor = ""; // Rétablissez la couleur de fond par défaut
     selected.style.transform = "translate(0px, 0px)";
-    
     draggable.classList.remove("dragging");
-    selected = null;
-    // Effectuez ici les actions nécessaires lorsque le glissement se termine
+
     todoTask.appendChild(selected);
     H2Task();
     todoH2Task();
@@ -308,5 +303,3 @@ draggables.forEach((draggable) => {
     document.location.reload();
   }
 });
-
-
