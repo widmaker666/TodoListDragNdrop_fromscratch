@@ -267,7 +267,7 @@ draggables.forEach((draggable) => {
   // Fonction pour gérer le touchmove
   function touchMove(e) {
     e.preventDefault();
-    
+    draggable.classList.add("dragging-color");
     // Obtenez les coordonnées du touchmove
     const touchX = e.touches[0].clientX;
     const touchY = e.touches[0].clientY;

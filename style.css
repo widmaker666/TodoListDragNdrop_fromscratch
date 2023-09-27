@@ -157,7 +157,7 @@ body main .tasks .task-array-container .dragging:hover {
   color: black;
 }
 body main .tasks .task-array-container .dragging-color {
-  border: none;
+  border: 1px solid black;
   opacity: 1;
   color: rgb(241, 0, 201);
 }
