@@ -257,7 +257,7 @@ draggables.forEach((draggable) => {
   // Fonction pour gérer le touchstart
   function touchStart(e) {
     e.preventDefault();
-    draggable.classList.add("dragging");
+    draggable.classList.add("dragging-color");
     selected = e.target;
   }
 
@@ -282,7 +282,7 @@ draggables.forEach((draggable) => {
   // Fonction pour gérer le touchend
   function touchEnd(e) {
     e.preventDefault();
-    draggable.classList.remove("dragging");
+    draggable.classList.remove("dragging-color");
     todoTask.appendChild(selected);
     H2Task();
     todoH2Task();

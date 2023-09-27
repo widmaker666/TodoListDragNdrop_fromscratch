@@ -176,6 +176,17 @@ body {
             color: black;
           }
         }
+        & .dragging-color {
+          border: none;
+          opacity: 1;
+          color: rgb(241, 0, 201);
+
+          &:hover {
+            background: lightblue;
+            color: black;
+          }
+        }
+
         & .no-div {
           display: none;
         }

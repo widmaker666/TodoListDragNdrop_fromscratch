@@ -156,6 +156,15 @@ body main .tasks .task-array-container .dragging:hover {
   background: transparent;
   color: black;
 }
+body main .tasks .task-array-container .dragging-color {
+  border: none;
+  opacity: 1;
+  color: rgb(241, 0, 201);
+}
+body main .tasks .task-array-container .dragging-color:hover {
+  background: lightblue;
+  color: black;
+}
 body main .tasks .task-array-container .no-div {
   display: none;
 }
