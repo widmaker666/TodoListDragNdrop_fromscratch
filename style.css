@@ -20,15 +20,20 @@ html {
 
 body {
   background: mediumseagreen;
-  min-height: 100vh;
 }
-body .title-section {
+body main {
+  min-height: 100vh;
+  height: 130vh;
+  max-height: auto;
+  position: relative;
+}
+body main .title-section {
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .title-section .title-container {
+body main .title-section .title-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,21 +46,21 @@ body .title-section .title-container {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-body .title-section .title-container h1 {
+body main .title-section .title-container h1 {
   font-family: "fuggles";
   font-size: 2rem;
 }
-body .title-section .title-container h3 {
+body main .title-section .title-container h3 {
   font-family: "rubik";
 }
-body .input-task-section {
+body main .input-task-section {
   height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .input-task-section .task-container {
+body main .input-task-section .task-container {
   width: 100%;
   height: 150px;
   display: flex;
@@ -66,22 +71,22 @@ body .input-task-section .task-container {
   background: rgb(255, 243, 239);
   border: 1.5px solid black;
 }
-body .input-task-section .task-container h2 {
+body main .input-task-section .task-container h2 {
   font-family: "rubik";
   font-weight: 100;
 }
-body .input-task-section .task-container .form-task {
+body main .input-task-section .task-container .form-task {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-body .input-task-section .task-container .form-task #taskInput {
+body main .input-task-section .task-container .form-task #taskInput {
   height: 40px;
   width: 250px;
   padding-left: 10px;
   font-family: "rubik";
 }
-body .input-task-section .task-container .form-task button {
+body main .input-task-section .task-container .form-task button {
   width: 80px;
   height: 30px;
   border-radius: 10px;
@@ -89,11 +94,11 @@ body .input-task-section .task-container .form-task button {
   background: transparent;
   font-family: "rubik";
 }
-body .input-task-section .task-container .form-task button:hover {
+body main .input-task-section .task-container .form-task button:hover {
   background: mediumseagreen;
   color: whitesmoke;
 }
-body .tasks {
+body main .tasks {
   min-height: 100px;
   height: auto;
   width: 90%;
@@ -105,21 +110,21 @@ body .tasks {
   background: rgb(255, 243, 239);
   border: 1.5px solid black;
 }
-body .tasks h1 {
+body main .tasks h1 {
   font-family: "fuggles";
   font-size: 3rem;
   -webkit-text-decoration: 2px underline;
           text-decoration: 2px underline;
   text-underline-offset: 5px;
 }
-body .tasks .task-array-container {
+body main .tasks .task-array-container {
   min-height: 100px;
   height: auto;
   width: 80%;
   margin: 0px auto;
   padding: 10px;
 }
-body .tasks .task-array-container .tasks-div {
+body main .tasks .task-array-container .tasks-div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,32 +134,32 @@ body .tasks .task-array-container .tasks-div {
   width: auto;
   border-radius: 20px;
 }
-body .tasks .task-array-container .tasks-div:hover {
+body main .tasks .task-array-container .tasks-div:hover {
   background: black;
   color: white;
 }
-body .tasks .task-array-container .tasks-div h2 {
+body main .tasks .task-array-container .tasks-div h2 {
   font-family: "rubik";
   font-weight: 400;
   font-size: 1rem;
   font-style: italic;
 }
-body .tasks .task-array-container .tasks-div h2:hover {
+body main .tasks .task-array-container .tasks-div h2:hover {
   cursor: pointer;
 }
-body .tasks .task-array-container .dragging {
+body main .tasks .task-array-container .dragging {
   border: none;
   opacity: 0.5;
   color: rgb(0, 0, 0);
 }
-body .tasks .task-array-container .dragging:hover {
+body main .tasks .task-array-container .dragging:hover {
   background: transparent;
   color: black;
 }
-body .tasks .task-array-container .no-div {
+body main .tasks .task-array-container .no-div {
   display: none;
 }
-body .todo {
+body main .todo {
   height: auto;
   width: 90%;
   margin: 20px auto 0 auto;
@@ -162,7 +167,7 @@ body .todo {
   align-items: center;
   justify-content: space-evenly;
 }
-body .todo .todo-task {
+body main .todo .todo-task {
   text-align: center;
   background: rgb(255, 243, 239);
   border: 1.5px solid black;
@@ -170,26 +175,26 @@ body .todo .todo-task {
   height: auto;
   width: 40%;
 }
-body .todo .todo-task h1 {
+body main .todo .todo-task h1 {
   font-family: "fuggles";
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin-bottom: 5px;
   letter-spacing: 2px;
   -webkit-text-decoration: 1px underline;
           text-decoration: 1px underline;
   text-underline-offset: 4px;
 }
-body .todo .todo-task .t-tasks h2 {
+body main .todo .todo-task .t-tasks h2 {
   font-family: "rubik";
   font-weight: 100;
   font-size: 1rem;
   font-style: italic;
   margin-bottom: 10px;
 }
-body .todo .todo-task .t-tasks h2:hover {
+body main .todo .todo-task .t-tasks h2:hover {
   cursor: pointer;
 }
-body .todo .finish-task {
+body main .todo .finish-task {
   text-align: center;
   background: rgb(255, 243, 239);
   border: 1.5px solid black;
@@ -197,33 +202,35 @@ body .todo .finish-task {
   height: auto;
   width: 40%;
 }
-body .todo .finish-task h1 {
+body main .todo .finish-task h1 {
   font-family: "fuggles";
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin-bottom: 5px;
   letter-spacing: 2px;
   -webkit-text-decoration: 1px underline;
           text-decoration: 1px underline;
   text-underline-offset: 4px;
 }
-body .todo .finish-task .f-tasks h2 {
+body main .todo .finish-task .f-tasks h2 {
   font-family: "rubik";
   font-weight: 100;
   font-size: 1rem;
   font-style: italic;
   margin-bottom: 10px;
 }
-body .todo .finish-task .f-tasks h2:hover {
+body main .todo .finish-task .f-tasks h2:hover {
   cursor: pointer;
 }
-body .trash {
+body main .trash {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  height: auto;
 }
-body .trash svg:hover {
+body main .trash svg:hover {
   transform: scale(1.15);
 }
-body footer {
+body main footer {
   position: absolute;
   bottom: 0;
   width: 100%;

@@ -27,251 +27,259 @@ html {
 
 body {
   background: mediumseagreen;
-  min-height: 100vh;
+  & main {
+    min-height: 100vh;
+    height: 130vh;
+    max-height: auto;
+    position: relative; 
 
-  & .title-section {
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    & .title-container {
+    & .title-section {
+      height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      background: rgb(255, 243, 239);
-      border: 1.5px solid black;
-      width: 200px;
-      height: 80px;
-      margin-top: 10px;
-      margin-bottom: 10px;
 
-      & h1 {
-        font-family: $title-manuscrit;
-        font-size: 2rem;
-      }
-      & h3 {
-        font-family: $font-reg;
+      & .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: rgb(255, 243, 239);
+        border: 1.5px solid black;
+        width: 200px;
+        height: 80px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        & h1 {
+          font-family: $title-manuscrit;
+          font-size: 2rem;
+        }
+        & h3 {
+          font-family: $font-reg;
+        }
       }
     }
-  }
 
-  & .input-task-section {
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & .task-container {
+    & .input-task-section {
+      height: auto;
       width: 100%;
-      height: 150px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 10px;
 
-      background: rgb(255, 243, 239);
-      border: 1.5px solid black;
-
-      & h2 {
-        font-family: $font-reg;
-        font-weight: 100;
-      }
-
-      & .form-task {
+      & .task-container {
+        width: 100%;
+        height: 150px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-
-        & #taskInput {
-          height: 40px;
-          width: 250px;
-          padding-left: 10px;
-          font-family: $font-reg;
-        }
-
-        & button {
-          width: 80px;
-          height: 30px;
-          border-radius: 10px;
-          margin: 5px auto 5px auto;
-          background: transparent;
-          font-family: $font-reg;
-
-          &:hover {
-            background: mediumseagreen;
-            color: whitesmoke;
-          }
-        }
-      }
-    }
-  }
-  & .tasks {
-    min-height: 100px;
-    height: auto;
-    width: 90%;
-    margin: 10px auto;
-    padding: 5px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    background: rgb(255, 243, 239);
-    border: 1.5px solid black;
-
-    & h1 {
-      font-family: $title-manuscrit;
-      font-size: 3rem;
-      text-decoration: 2px underline;
-      text-underline-offset: 5px;
-    }
-
-    & .task-array-container {
-      min-height: 100px;
-      height: auto;
-      width: 80%;
-      margin: 0px auto;
-      padding: 10px;
-
-      & .tasks-div {
-        display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto 10px auto;
-        height: 50px;
-        border: 2px solid black;
-        width: auto;
-        border-radius: 20px;
+        gap: 10px;
 
-        &:hover {
-          background: black;
-          color: white;
-        }
+        background: rgb(255, 243, 239);
+        border: 1.5px solid black;
 
-        & h2 {
-          font-family: $font-reg;
-          font-weight: 400;
-          font-size: 1rem;
-          font-style: italic;
-
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
-      & .dragging {
-        border: none;
-        opacity: 0.5;
-        color: rgb(0, 0, 0);
-
-        &:hover {
-          background: transparent;
-          color: black;
-        }
-      }
-      & .no-div {
-        display: none;
-      }
-    }
-  }
-  & .todo {
-    height: auto;
-    width: 90%;
-    margin: 20px auto 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    & .todo-task {
-      text-align: center;
-      background: rgb(255, 243, 239);
-      border: 1.5px solid black;
-      min-height: 100px;
-      height: auto;
-      width: 40%;
-
-      & h1 {
-        font-family: $title-manuscrit;
-        font-size: 2rem;
-        margin-bottom: 5px;
-        letter-spacing: 2px;
-        text-decoration: 1px underline;
-        text-underline-offset: 4px;
-      }
-
-      & .t-tasks {
         & h2 {
           font-family: $font-reg;
           font-weight: 100;
-          font-size: 1rem;
-          font-style: italic;
-          margin-bottom: 10px;
+        }
 
-          &:hover {
-            cursor: pointer;
+        & .form-task {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          & #taskInput {
+            height: 40px;
+            width: 250px;
+            padding-left: 10px;
+            font-family: $font-reg;
+          }
+
+          & button {
+            width: 80px;
+            height: 30px;
+            border-radius: 10px;
+            margin: 5px auto 5px auto;
+            background: transparent;
+            font-family: $font-reg;
+
+            &:hover {
+              background: mediumseagreen;
+              color: whitesmoke;
+            }
           }
         }
       }
     }
-    & .finish-task {
-      text-align: center;
-      background: rgb(255, 243, 239);
-      border: 1.5px solid black;
+    & .tasks {
       min-height: 100px;
       height: auto;
-      width: 40%;
+      width: 90%;
+      margin: 10px auto;
+      padding: 5px;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      background: rgb(255, 243, 239);
+      border: 1.5px solid black;
 
       & h1 {
         font-family: $title-manuscrit;
-        font-size: 2rem;
-        margin-bottom: 5px;
-        letter-spacing: 2px;
-        text-decoration: 1px underline;
-        text-underline-offset: 4px;
+        font-size: 3rem;
+        text-decoration: 2px underline;
+        text-underline-offset: 5px;
       }
 
-      & .f-tasks {
-        & h2 {
-          font-family: $font-reg;
-          font-weight: 100;
-          font-size: 1rem;
-          font-style: italic;
-          margin-bottom: 10px;
+      & .task-array-container {
+        min-height: 100px;
+        height: auto;
+        width: 80%;
+        margin: 0px auto;
+        padding: 10px;
+
+        & .tasks-div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto 10px auto;
+          height: 50px;
+          border: 2px solid black;
+          width: auto;
+          border-radius: 20px;
 
           &:hover {
-            cursor: pointer;
+            background: black;
+            color: white;
+          }
+
+          & h2 {
+            font-family: $font-reg;
+            font-weight: 400;
+            font-size: 1rem;
+            font-style: italic;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+        & .dragging {
+          border: none;
+          opacity: 0.5;
+          color: rgb(0, 0, 0);
+
+          &:hover {
+            background: transparent;
+            color: black;
+          }
+        }
+        & .no-div {
+          display: none;
+        }
+      }
+    }
+    & .todo {
+      height: auto;
+      width: 90%;
+      margin: 20px auto 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      & .todo-task {
+        text-align: center;
+        background: rgb(255, 243, 239);
+        border: 1.5px solid black;
+        min-height: 100px;
+        height: auto;
+        width: 40%;
+
+        & h1 {
+          font-family: $title-manuscrit;
+          font-size: 1.3rem;
+          margin-bottom: 5px;
+          letter-spacing: 2px;
+          text-decoration: 1px underline;
+          text-underline-offset: 4px;
+        }
+
+        & .t-tasks {
+          & h2 {
+            font-family: $font-reg;
+            font-weight: 100;
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 10px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      & .finish-task {
+        text-align: center;
+        background: rgb(255, 243, 239);
+        border: 1.5px solid black;
+        min-height: 100px;
+        height: auto;
+        width: 40%;
+
+        & h1 {
+          font-family: $title-manuscrit;
+          font-size: 1.3rem;
+          margin-bottom: 5px;
+          letter-spacing: 2px;
+          text-decoration: 1px underline;
+          text-underline-offset: 4px;
+        }
+
+        & .f-tasks {
+          & h2 {
+            font-family: $font-reg;
+            font-weight: 100;
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 10px;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
       }
     }
-  }
-  & .trash {
-    text-align: center;
-    margin-top: 50px;
+    & .trash {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 100px;
+      height: auto;
 
-    & svg:hover {
-      transform: scale(1.15);
+      & svg:hover {
+        transform: scale(1.15);
+      }
     }
-  }
-  & footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgb(255, 243, 239);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    margin-top: 20px;
-    font-family: $font-reg;
-    font-weight: 100;
-    font-style: italic;
-    letter-spacing: 1px;
-    font-size: 0.7rem;
-    padding: 5px;
+    & footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgb(255, 243, 239);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin-top: 20px;
+      font-family: $font-reg;
+      font-weight: 100;
+      font-style: italic;
+      letter-spacing: 1px;
+      font-size: 0.7rem;
+      padding: 5px;
+    }
   }
 }
