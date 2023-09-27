@@ -27,7 +27,7 @@ html {
 
 body {
   background: mediumseagreen;
-  height: 100vh;
+  min-height: 100vh;
 
   & .title-section {
     height: auto;
@@ -255,5 +255,23 @@ body {
     & svg:hover {
       transform: scale(1.15);
     }
+  }
+  & footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgb(255, 243, 239);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+    font-family: $font-reg;
+    font-weight: 100;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-size: 0.7rem;
+    padding: 5px;
   }
 }
