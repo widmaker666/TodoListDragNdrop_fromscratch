@@ -111,6 +111,7 @@ body {
     }
   }
   & .tasks {
+    min-height: 100px;
     height: auto;
     width: 90%;
     margin: 10px auto;
@@ -129,6 +130,7 @@ body {
     }
 
     & .task-array-container {
+      min-height: 100px;
       height: auto;
       width: 80%;
       margin: 0px auto;
@@ -153,17 +155,25 @@ body {
           font-family: $font-reg;
           font-weight: 400;
           font-size: 1rem;
-          font-style: italic;        
+          font-style: italic;
 
           &:hover {
             cursor: pointer;
           }
         }
+      }
+      & .dragging {
+        border: none;
+        opacity: 0.5;
+        color: rgb(0, 0, 0);
 
-        & .dragging {
-          opacity: 0.5;
-          color: lightcoral;
+        &:hover {
+          background: transparent;
+          color: black;
         }
+      }
+      & .no-div {
+        display: none;
       }
     }
   }
@@ -193,10 +203,16 @@ body {
       }
 
       & .t-tasks {
-        & h3 {
+        & h2 {
           font-family: $font-reg;
           font-weight: 100;
+          font-size: 1rem;
+          font-style: italic;
           margin-bottom: 10px;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -218,12 +234,26 @@ body {
       }
 
       & .f-tasks {
-        & h3 {
+        & h2 {
           font-family: $font-reg;
           font-weight: 100;
+          font-size: 1rem;
+          font-style: italic;
           margin-bottom: 10px;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
+    }
+  }
+  & .trash {
+    text-align: center;
+    margin-top: 50px;
+
+    & svg:hover {
+      transform: scale(1.15);
     }
   }
 }
