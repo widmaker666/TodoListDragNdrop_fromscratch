@@ -247,7 +247,7 @@ draggablesFinish.forEach((draggable) => {
 
 //* Touchstart pour Telephone //
 
-
+//- your task to todo //
 let selected = null; // Variable pour stocker l'élément sélectionné
 let touchStartX, touchStartY;
 
@@ -303,3 +303,149 @@ draggables.forEach((draggable) => {
     document.location.reload();
   }
 });
+
+
+//- todo to finished task //
+// Sélectionnez les éléments glissables dans la liste à faire
+
+let selected2 = null;
+let touchStart2X, touchStart2Y;
+
+draggablesTodo.forEach((draggable) => {
+  // Écoutez le touchstart pour commencer le glissement
+  draggable.addEventListener("touchstart", touchStart);
+
+  // Fonction pour gérer le touchstart
+  function touchStart(e) {
+    e.preventDefault();
+    draggable.classList.add("dragging");
+    selected2 = e.target;
+    touchStart2X = e.touches[0].clientX;
+    touchStart2Y = e.touches[0].clientY;
+  }
+
+  // Écoutez le touchmove pour le déplacement
+  draggable.addEventListener("touchmove", touchMove);
+
+  // Fonction pour gérer le touchmove
+  function touchMove(e) {
+    e.preventDefault();
+
+    // Obtenez les coordonnées du touchmove
+    const touchX = e.touches[0].clientX;
+    const touchY = e.touches[0].clientY;
+
+    // Mettez à jour la position de l'élément sélectionné
+    const deltaX = touchX - touchStart2X;
+    const deltaY = touchY - touchStart2Y;
+    selected2.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+
+    // Ajoutez un style pour rendre l'élément sélectionné visible pendant le déplacement
+    selected2.style.backgroundColor = "lightblue"; // Changez la couleur de fond selon vos préférences
+  }
+
+  // Écoutez le touchend pour la fin du glissement
+  draggable.addEventListener("touchend", touchEnd);
+
+  // Fonction pour gérer le touchend
+  function touchEnd(e) {
+    e.preventDefault();
+
+    // Réinitialisez le style de l'élément sélectionné
+    selected2.style.backgroundColor = ""; // Rétablissez la couleur de fond par défaut
+    selected2.style.transform = "translate(0px, 0px)";
+    draggable.classList.remove("dragging");
+
+    // Vérifiez si l'élément a été glissé dans le conteneur de destination
+    const rect = containerFinish.getBoundingClientRect();
+    const dropX = e.changedTouches[0].clientX;
+    const dropY = e.changedTouches[0].clientY;
+
+    if (
+      dropX >= rect.left &&
+      dropX <= rect.right &&
+      dropY >= rect.top &&
+      dropY <= rect.bottom
+    ) {
+      // Si l'élément a été déposé dans le conteneur de destination, ajoutez-le à la liste des tâches terminées
+      finishedTask.appendChild(selected2);
+
+      // Exécutez les fonctions de mise à jour de l'interface utilisateur
+      H2Task();
+      todoH2Task();
+      H2FinishTask();
+    }
+  }
+});
+
+//- todo to finished task //
+// Sélectionnez les éléments glissables dans la liste à faire
+
+let selected3 = null;
+let touchStart3X, touchStart3Y;
+
+draggablesFinish.forEach((draggable) => {
+  // Écoutez le touchstart pour commencer le glissement
+  draggable.addEventListener("touchstart", touchStart);
+
+  // Fonction pour gérer le touchstart
+  function touchStart(e) {
+    e.preventDefault();
+    draggable.classList.add("dragging");
+    selected3 = e.target;
+    touchStart3X = e.touches[0].clientX;
+    touchStart3Y = e.touches[0].clientY;
+  }
+
+  // Écoutez le touchmove pour le déplacement
+  draggable.addEventListener("touchmove", touchMove);
+
+  // Fonction pour gérer le touchmove
+  function touchMove(e) {
+    e.preventDefault();
+
+    // Obtenez les coordonnées du touchmove
+    const touchX = e.touches[0].clientX;
+    const touchY = e.touches[0].clientY;
+
+    // Mettez à jour la position de l'élément sélectionné
+    const deltaX = touchX - touchStart3X;
+    const deltaY = touchY - touchStart3Y;
+    selected3.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+
+    // Ajoutez un style pour rendre l'élément sélectionné visible pendant le déplacement
+    selected3.style.backgroundColor = "lightblue"; // Changez la couleur de fond selon vos préférences
+  }
+
+  // Écoutez le touchend pour la fin du glissement
+  draggable.addEventListener("touchend", touchEnd);
+
+  // Fonction pour gérer le touchend
+  function touchEnd(e) {
+    e.preventDefault();
+
+    // Réinitialisez le style de l'élément sélectionné
+    selected3.style.backgroundColor = ""; // Rétablissez la couleur de fond par défaut
+    selected3.style.transform = "translate(0px, 0px)";
+    draggable.classList.remove("dragging");
+
+    // Vérifiez si l'élément a été glissé dans le conteneur de destination
+    const rect = trashed.getBoundingClientRect();
+    const dropX = e.changedTouches[0].clientX;
+    const dropY = e.changedTouches[0].clientY;
+
+    if (
+      dropX >= rect.left &&
+      dropX <= rect.right &&
+      dropY >= rect.top &&
+      dropY <= rect.bottom
+    ) {
+      trashed.appendChild(selected3);
+      H2Task();
+      todoH2Task();
+      H2FinishTask();
+      document.location.reload();
+    }
+  }
+});
+
