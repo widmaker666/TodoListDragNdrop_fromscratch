@@ -374,6 +374,7 @@ draggablesTodo.forEach((draggable) => {
       H2Task();
       todoH2Task();
       H2FinishTask();
+      document.location.reload();
     }
   }
 });
